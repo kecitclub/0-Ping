@@ -1,7 +1,13 @@
 <script>
+  let typer = "";
+  let status = "";
+  let timer;
+  const timeoutVal = 1000;
+  let output = "";
+
   let messages = [];
   let input = "";
-  
+
   function sendMessage() {
     if (input.trim()) {
       messages = [...messages, input];
@@ -11,10 +17,27 @@
 
   function handleKeyDown(event) {
     if (event.key === "Enter" && !event.shiftKey) {
-      
       event.preventDefault();
       sendMessage();
     }
+  }
+
+  import { callAPI } from "./apiacess.js";
+  async function handleKeyUp() {
+    clearTimeout(timer);
+    timer = setTimeout(async () => {
+      status = "Processing...";
+      output = "";
+      output = await callAPI(typer);
+      messages = [...messages, output];
+      status = "";
+    }, timeoutVal);
+  }
+
+  function KeyDown() {
+    clearTimeout(timer);
+    status = "Typing...";
+    output = "";
   }
 </script>
 
@@ -25,12 +48,17 @@
         {#each messages as message}
           <div class="message">{message}</div>
         {/each}
+        {#if status}
+          <div class="status">{status}</div>
+        {/if}
       </div>
       <textarea
         class="message-input"
-        bind:value={input}
+        bind:value={typer}
         placeholder="Type a message..."
         on:keydown={handleKeyDown}
+        on:keydown={KeyDown}
+        on:keyup={handleKeyUp}
       ></textarea>
       <button class="send-button" on:click={sendMessage}>Send</button>
     </div>
@@ -100,6 +128,6 @@
     padding: 5px;
     margin-bottom: 5px;
     border-radius: 10px;
-    color: var(--txtcol)
+    color: var(--txtcol);
   }
 </style>
