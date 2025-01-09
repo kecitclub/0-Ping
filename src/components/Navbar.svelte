@@ -3,7 +3,7 @@
 
 <style>
     :root {
-        --bg: #202020;
+        --navbg: #171718;
         --shadow: #111111;
         --fontcol: #ededed;
         --bordercol: #494949;
@@ -17,7 +17,7 @@
 
     ul {
         list-style-type: none;
-        background-color: var(--bg);
+        background-color: var(--navbg);
         overflow: hidden;
         position: fixed;
         margin: 0;
@@ -36,7 +36,7 @@
         font-family: jetbrains;
         display: block;
         text-decoration: none;
-        padding: 3vh;
+        padding: 1vh;
         text-align: center;
         color: var(--fontcol);
         border-radius: 6px;
@@ -51,7 +51,7 @@
 <main>
     <ul>
         <li><a href="#md">Markdown</a></li>
-        <li><a href="draw">Whiteboard</a></li>
-        <li><a href="files">Files</a></li>
+        <li><a href="#draw">Whiteboard</a></li>
+        <li><a href="#files">Files</a></li>
     </ul>
 </main>
