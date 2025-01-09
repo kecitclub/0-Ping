@@ -2,8 +2,12 @@
     *{
         box-sizing: border-box;
     }
-    main {
-        font-family: Arial, sans-serif;
+    @font-face{
+        font-family: jetbrains;
+        src: url('/public/JetBrainsMono-Medium.ttf');
+    }
+    main{
+        
         background-color: #090909;
         display: flex;
         justify-content: center;
@@ -21,6 +25,8 @@
         font-size: 10vh;
         margin-bottom: 100px;
         text-align: center;
+        font-family:jetbrains;
+
     }
     .login-container input[type="text"],
     .login-container input[type="password"] {
@@ -30,9 +36,11 @@
         border: 0.5px solid #ccc;
         border-radius: 2px;
         text-align: center;
+        font-family: jetbrains;
     }
     .login-container input::placeholder{
         text-align: center;
+        font-family: jetbrains;
     }
     .logo {
         width: 20vw;
@@ -58,12 +66,13 @@
         background-color: #545454;
     }
 </style>
+
 <main>
     <div class="container">
     <div class="name">NEODESK</div>
-    <img src="./trans_bg.png" alt="Logo" class="logo">
+    <img src="../trans_bg.png" alt="Logo" class="logo">
     <div class="login-container">
-    <form action="/login.html" method="post">
+    <form action="app.html" method="post">
         <input type="text" name="username" placeholder="Username" required>
         <input type="password" name="password" placeholder="Password" required>
         <button type="submit">Login</button>

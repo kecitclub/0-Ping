@@ -1,9 +1,9 @@
 import { mount } from 'svelte'
 
-import App from './App.svelte'
+import login from './login.svelte'
 
-const app = mount(App, {
+const logi = mount(login, {
   target: document.body,
 })
 
-export default app
+export default logi
