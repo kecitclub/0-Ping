@@ -1,11 +1,11 @@
 <script>
   import Navbar from "./components/Navbar.svelte";
-  import Chatbox from "./components/Chatbox.svelte";
+  import InsightsAi from "./components/InsightsAi.svelte";
 </script>
 
 <main>
   <Navbar />
-  <Chatbox />
+  <InsightsAi />
 </main>
 
 <style>
