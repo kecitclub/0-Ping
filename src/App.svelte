@@ -4,16 +4,18 @@
   import MDeditor from "./components/MDeditor.svelte";
   import MDRender from "./components/MDrender.svelte";
   import Insights from "./components/InsightsAi.svelte";
+
+  let mdText = "# Hello, Markdown!\n\nThis is a **bold** text and this is *italic*.\n\n- Item 1\n- Item 2\n";
 </script>
 
 <main>
   <Navbar />
   <div class="md">
     <div class="mdeditor">
-      <MDeditor />
+      <MDeditor bind:mdText/>
     </div>
     <div class="mdrender">
-      <MDRender />
+      <MDRender {mdText}/>
     </div>
     <div class="chat">
       <Chatbox />

@@ -129,5 +129,6 @@
     margin-bottom: 5px;
     border-radius: 10px;
     color: var(--txtcol);
+    font-size: small;
   }
 </style>

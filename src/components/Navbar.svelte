@@ -1,4 +1,13 @@
 <script>
+    function makeActive(id) {
+    const elements = document.querySelectorAll('a'); // Select all <a> tags
+    elements.forEach(element => {
+      element.classList.remove('active'); // Remove active class from all links
+    });
+
+    const element = document.getElementById(id);
+    element.classList.add('active');
+}
 </script>
 
 <style>
@@ -7,7 +16,8 @@
         --shadow: #111111;
         --fontcol: #ededed;
         --bordercol: #494949;
-        --hover: #545454;
+        --hover: #50597e;
+        --activetab: #5b6eba;
     }
 
     @font-face {
@@ -46,12 +56,15 @@
     li a:hover {
         background-color: var(--hover);
     }
+    .active {
+        background-color: var(--activetab);
+    }
 </style>
 
 <main>
     <ul>
-        <li><a href="#md">Markdown</a></li>
-        <li><a href="#draw">Whiteboard</a></li>
-        <li><a href="#files">Files</a></li>
+        <li><a id="md" on:click={() => makeActive('md')} href="#md" class=active>Markdown</a></li>
+        <li><a id="draw" on:click={() => makeActive('draw')} href="#draw">Whiteboard</a></li>
+        <li><a id="files" on:click={() => makeActive('files')} href="#files">Files</a></li>
     </ul>
 </main>

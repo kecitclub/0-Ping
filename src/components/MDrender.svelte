@@ -1,5 +1,7 @@
 <script>
-    let mdText = "# Hello, Markdown!\n\nThis is a **bold** text and this is *italic*.\n\n- Item 1\n- Item 2\n";
+    import { marked } from 'marked';
+    export let mdText = "# Hello, Markdown!\n\nThis is a **bold** text and this is *italic*.\n\n- Item 1\n- Item 2\n";
+    let htmlContent = marked(mdText);
 </script>
 
 <style>
@@ -12,15 +14,17 @@
         height: 85vh;
         margin-top: 10vh;
         font-family: monospace;
+        color: #ededed;
         font-size: 14px;
         padding: 10px;
         background-color: var(--editor-bg);
         border: 1px solid var(--bordercol);
         border-radius: 10px;
         margin-bottom: 20px;
+        overflow-y: scroll;
     }
 </style>
 
 <main>
-    <div></div>
+    <div>{@html htmlContent}</div>
 </main>
