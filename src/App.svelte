@@ -34,6 +34,6 @@
   }
 
   .chat {
-    margin-top: 61vh;
+    margin-top: 46vh;
   }
 </style>

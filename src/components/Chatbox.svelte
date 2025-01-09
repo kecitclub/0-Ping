@@ -82,12 +82,12 @@
   .chatbox {
     display: flex;
     flex-direction: column;
-    width: 300px;
-    height: 200px;
+    width: 28vw;
+    height: 48vh;
     background-color: var(--msgboxbg);
     border: 1px solid var(--msgboxborder);
     border-radius: 10px;
-    padding: 10px;
+    padding: 1vw;
   }
 
   .messages {
@@ -98,13 +98,14 @@
     background-color: var(--txtboxbg);
     border: 1px solid var(--msgboxborder);
     border-radius: 10px;
-    max-height: 150px;
+    /* max-height: 150px; */
   }
 
   .message-input {
     background-color: var(--txtboxbg);
     color: var(--txtcol);
     padding: 5px;
+    height: 10vh;
     border: 1px solid var(--msgboxborder);
     border-radius: 10px;
     resize: none;

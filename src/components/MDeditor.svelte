@@ -11,7 +11,7 @@
     textarea {
         background-color: var(--mdeditbg);
         color: var(--textcol);
-        width: 35vw;
+        width: 30vw;
         height: 85vh;
         margin-top: 10vh;
         font-family: monospace;
