@@ -1,13 +1,12 @@
 <script>
-    import Navbar from './components/Navbar.svelte'
-    import Md from './components/MDeditor.svelte'
+  import Navbar from "./components/Navbar.svelte";
+  import Chatbox from "./components/Chatbox.svelte";
 </script>
 
-<style>
-
-</style>
-
 <main>
-    <Navbar/>
-    <Md/>
+  <Navbar />
+  <Chatbox />
 </main>
+
+<style>
+</style>
