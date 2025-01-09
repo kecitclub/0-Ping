@@ -12,10 +12,11 @@
   <Navbar />
   <div class="md">
     <div class="mdeditor">
-      <MDeditor bind:mdText/>
+      <MDeditor bind:mdText />
+      <p>{mdText}</p>
     </div>
     <div class="mdrender">
-      <MDRender {mdText}/>
+      <MDRender {mdText} />
     </div>
     <div class="chat">
       <Chatbox />

@@ -1,7 +1,7 @@
 <script>
     import { marked } from 'marked';
     export let mdText = "# Hello, Markdown!\n\nThis is a **bold** text and this is *italic*.\n\n- Item 1\n- Item 2\n";
-    let htmlContent = marked(mdText);
+    $: htmlContent = marked(mdText);
 </script>
 
 <style>
