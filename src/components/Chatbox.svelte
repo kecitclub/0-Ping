@@ -113,7 +113,7 @@
     font-family: firamono;
     display: flex;
     flex-direction: column;
-    width: 28vw;
+    width: 27vw;
     height: 48vh;
     background-color: var(--msgboxbg);
     border: 1px solid var(--msgboxborder);

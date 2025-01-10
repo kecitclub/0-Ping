@@ -69,7 +69,7 @@
   on:mousemove={draw}
   on:mouseup={stopDrawing}
   on:mouseleave={stopDrawing}
-/>
+></canvas>
 
 <button class="eraser-btn" on:click={toggleEraser}>
   {isErasing ? "Switch to Draw" : "Switch to Erase"}
@@ -112,5 +112,4 @@
 </style>
 <main>
   <Navbar />
-  {()=>makeActive('draw')}
 </main>

@@ -29,6 +29,7 @@
         padding: 10px;
         background-color: var(--renderer-bg);
         border-radius: 10px;
+        overflow-y: auto;
     }
     .renderer {
         border: 1px solid var(--renderborder);

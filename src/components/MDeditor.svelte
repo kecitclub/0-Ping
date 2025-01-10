@@ -59,7 +59,7 @@
   }
   #outputbox{
     justify-content: center;
-    margin-top: 10vh;
+    margin-top: 1vh;
     margin-right:2%;
     align-items: right;
     float: right;
@@ -98,5 +98,5 @@
     <div id="outputbox">
         <div id="statuss">{statuss}</div>
         <div id="output">{output}</div>
-      </div>
+    </div>
 </main>
