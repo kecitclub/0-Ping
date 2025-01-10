@@ -55,25 +55,53 @@
 </main>
 
 <style>
+  :root {
+    --pdfbg: #211f23;
+    --btntext: #dedede;
+    --btncolor: #6482e6;
+    --field: #202021;
+    --fieldborder: #444445;
+  }
+
+  @font-face{
+    font-family: firamono;
+    src: url(/public/FiraMono-Regular.ttf)
+  }
+
   main {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    max-width: 600px;
+    font-family: firamono;
+    padding: 4vh;
+    max-width: 50vw;
     margin: 0 auto;
     margin-top: 5vw;
   }
 
   input,
   button {
-    margin: 10px 0;
-    display: block;
+    font-family: jetbrains;
+    display: flex;
+    margin-bottom: 2vh;
+    flex-direction: column;
+    outline: none;
+    cursor: pointer;
+    padding: 10px;
+    background-color: var(--btncolor);
+    color: var(--btntext);
+    border: none;
+    border-radius: 10px;
+  }
+  input:active,
+  button:active {
+    transform: scale(0.9);
   }
 
   #output {
-    margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
+    margin-top: 4vh;
+    padding: 1vh;
+    min-height: 50vh;
+    color: var(--btntext);
+    border: 1px solid var(--fieldborder);
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: var(--field);
   }
 </style>

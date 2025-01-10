@@ -15,8 +15,9 @@
   
   <nav>
     <ul>
-        <li><a id="md" on:click={() => makeActive('md')} href="/app.html" class=active><img alt="" src="/public/write.png" width=35></a></li>
-        <li><a id="draw" on:click={() => makeActive('draw')} href="/draw.html"><img alt="" src="/public/whiteboard.png" width=35></a></li>
+      <li><a id="md" on:click={() => makeActive('md')} href="/app.html" class=active><img alt="" src="/public/write.png" width=35></a></li>
+      <li><a id="draw" on:click={() => makeActive('draw')} href="/draw.html"><img alt="" src="/public/whiteboard.png" width=35></a></li>
+      <li><a id="pdfsum" on:click={() => makeActive('pdfsum')} href="/pdf.html"><img alt="" src="/public/pdf.png" width=30></a></li>
       <li class="dropdown">
         <a href="#abc" on:click|stopPropagation={toggleDropdown}>
           <img alt="" src="/public/contacts.png" width=35>

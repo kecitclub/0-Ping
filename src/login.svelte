@@ -50,7 +50,7 @@
     .login-container input[type="text"]:focus,
     .login-container input[type="password"]:focus {
         outline: none;
-        border: 1px solid 
+        border: 1px solid; 
     }
     .login-container input::placeholder{
         text-align: center;
