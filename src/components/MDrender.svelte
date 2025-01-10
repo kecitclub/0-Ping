@@ -5,26 +5,53 @@
 </script>
 
 <style>
-    :root {
-        --editor-bg :#131213;
-        --bordercol: #2a2a2a;
+    @font-face {
+        font-family: jetbrains;
+        src: url(/public/JetBrainsMono-Medium.ttf);
     }
-    div {
+    :root {
+        --renderer-bg :#131213;
+        --bordercol: #2a2a2a;
+        --rendertxt: #cdcdcd;
+        --titlebg: #603333;
+        --renderborder: #45393b;
+    }
+    .mdoutput {
         width: 35vw;
-        height: 85vh;
-        margin-top: 10vh;
+        height: 80vh;
         font-family: monospace;
-        color: #ededed;
+        color: var(--rendertxt);
         font-size: 14px;
         padding: 10px;
-        background-color: var(--editor-bg);
-        border: 1px solid var(--bordercol);
+        background-color: var(--renderer-bg);
         border-radius: 10px;
-        margin-bottom: 20px;
-        overflow-y: scroll;
+    }
+    .renderer {
+        border: 1px solid var(--renderborder);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10vh;
+        background-color: var(--renderer-bg) ;
+    }
+    .titlebar {
+        font-family: jetbrains;
+        font-size: small;
+        background-color: var(--titlebg);
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        text-align: center;
+        font-weight: bold;
+        color: var(--rendertxt);
+        width: 37vw;
+        padding: 5px;
     }
 </style>
 
 <main>
-    <div>{@html htmlContent}</div>
+    <div class="renderer">
+        <div class="titlebar">Preview</div>
+        <div class="mdoutput">{@html htmlContent}</div>
+    </div>
 </main>

@@ -82,6 +82,7 @@
     --txtcol: #ededed;
     --sendbtn: #4c69de;
     --sendbtnhover: #54608e;
+    --focusinput: #737c87;
   }
   .chatbox-container {
     justify-content: center;
@@ -107,7 +108,6 @@
     background-color: var(--txtboxbg);
     border: 1px solid var(--msgboxborder);
     border-radius: 10px;
-    /* max-height: 150px; */
   }
 
   .message-input {
@@ -121,11 +121,16 @@
     margin-bottom: 10px;
   }
 
+  .message-input:focus {
+    outline: none;
+    border-color: var(--focusinput);
+  }
+
   .send-button {
     padding: 10px;
     border: none;
     background-color: var(--sendbtn);
-    color: white;
+    color: var(--txtcol);
     border-radius: 10px;
     cursor: pointer;
   }

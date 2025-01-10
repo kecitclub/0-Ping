@@ -12,10 +12,9 @@
 
 <style>
     :root {
-        --navbg: #171718;
-        --shadow: #111111;
+        --navbg: #131316;
         --fontcol: #ededed;
-        --bordercol: #494949;
+        --navborder: #393f45;
         --hover: #50597e;
         --activetab: #5b6eba;
     }
@@ -33,8 +32,7 @@
         margin: 0;
         padding: 0;
         width: 100vw;
-        box-shadow: 0 0 8px 8px var(--shadow);
-        border: 1px solid var(--bordercol);
+        border: 1px solid var(--navborder);
         border-radius: 6px;
     }
 

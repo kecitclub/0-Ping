@@ -26,6 +26,7 @@
         --mdeditbg: #141417;
         --textcol: #ededed;
         --editorborder: #393f45;
+        --editorfocus: #676c74;
     }
     textarea {
         background-color: var(--mdeditbg);
@@ -40,6 +41,12 @@
         border-radius: 10px;
         margin-bottom: 20px;
     }
+
+    textarea:focus {
+      outline: none;
+      border-color: var(--editorfocus);
+    }
+
     @font-face {
         font-family: jetbrains;
         src: url(/public/JetBrainsMono-Medium.ttf);
