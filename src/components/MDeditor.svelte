@@ -57,7 +57,7 @@
       font-family: firamono;
       src: url(/public/FiraMono-Regular.ttf);
   }
-  #outputbox{
+  /*#outputbox{
     justify-content: center;
     margin-top: 1vh;
     margin-right:2%;
@@ -85,7 +85,7 @@
     font-size: 15px;
     font-family: jetbrains;
     color: var(--textcol);
-  }
+  }*/
 </style>
 
 <main>
@@ -95,8 +95,8 @@
     on:keydown="{handleKeyDown}"
         
     ></textarea>
-    <div id="outputbox">
+    <!--<div id="outputbox">
         <div id="statuss">{statuss}</div>
         <div id="output">{output}</div>
-    </div>
+    </div>-->
 </main>

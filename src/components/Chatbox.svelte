@@ -1,6 +1,7 @@
 <script>
   import { afterUpdate } from "svelte";
-
+  export let output='';
+  export let statuss='';
   let status = "";
   let messages = [];
   let input = "";
@@ -66,6 +67,11 @@
 </script>
 
 <main>
+  <div class=aistuff>
+  <div id="insight">
+    <div id="statuss">{statuss}</div>
+    <div id="output">{output}</div>
+  </div>
   <div class="chatbox-container">
     <div class="chatbox">
       <div class="messages">
@@ -86,17 +92,17 @@
       <button class="send-button" on:click={sendMessage}>Send</button>
     </div>
   </div>
+</div>
 </main>
 
 <style>
   :root {
-    --msgboxbg: #201f21;
-    --msgboxborder: #3d3e41;
-    --txtboxbg: #1c1b1d;
+    --msgboxbg: #161613;
+    --msgboxborder: #484848;
+    --txtboxbg: #28292c;
     --txtcol: #ededed;
-    --sendbtn: #6482e6;
-    --sendbtntext: #201f21;
-    --sendbtnhover: #5067b4;
+    --sendbtn: #4c69de;
+    --sendbtnhover: #54608e;
     --focusinput: #737c87;
   }
 
@@ -104,7 +110,36 @@
     font-family: firamono;
     src: url(/public/FiraMono-Regular.ttf);
   }
+  .aistuff{
+    display: flex;
+    flex-direction: column;
+  }
+  #insight{
+    width: 29vw;
+    height: 21vw;
+    background-color: #212023 ;
+    border-radius: 10px;
+    overflow: scroll;
+    color: var(--txtcol);
+    gap: 1vw;
+  }
+  #output {
+    padding: 5%;
+    white-space: pre-wrap;
+    margin-top: 20px;
+    font-family: jetbrains;
+    color: var(--textcol);
+    container-name: sidebar;
+  }
 
+  #statuss {
+    padding: 2%;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 15px;
+    font-family: jetbrains;
+    color: var(--textcol);
+  }
   .chatbox-container {
     justify-content: center;
     align-items: center;
@@ -115,7 +150,7 @@
     display: flex;
     flex-direction: column;
     width: 27vw;
-    height: 48vh;
+    height: 38.8vh;
     background-color: var(--msgboxbg);
     border: 1px solid var(--msgboxborder);
     border-radius: 10px;
@@ -126,7 +161,7 @@
     flex: 1;
     overflow-y: auto;
     margin-bottom: 10px;
-    padding: 1vh;
+    padding: 5px;
     background-color: var(--txtboxbg);
     border: 1px solid var(--msgboxborder);
     border-radius: 10px;
@@ -136,7 +171,7 @@
     font-family: firamono;
     background-color: var(--txtboxbg);
     color: var(--txtcol);
-    padding: 1vh;
+    padding: 5px;
     height: 10vh;
     border: 1px solid var(--msgboxborder);
     border-radius: 10px;
@@ -154,7 +189,7 @@
     padding: 10px;
     border: none;
     background-color: var(--sendbtn);
-    color: var(--sendbtntext);
+    color: var(--txtcol);
     border-radius: 10px;
     cursor: pointer;
   }

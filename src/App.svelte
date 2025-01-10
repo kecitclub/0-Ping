@@ -19,7 +19,7 @@
       <MDRender {mdText} />
     </div>
     <div class="chat">
-      <Chatbox />
+      <Chatbox {output}/>
     </div>
   </div>
 </main>
@@ -31,6 +31,6 @@
   }
 
   .chat {
-    margin-top:46vh;
+    margin-top:10vh;
   }
 </style>
