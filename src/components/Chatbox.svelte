@@ -1,8 +1,17 @@
 <script>
+  import { afterUpdate } from "svelte";
+
   let status = "";
   let messages = [];
   let input = "";
   let typer = "";
+
+  function scrollToBottom() {
+    const messagesContainer = document.querySelector(".messages");
+    if (messagesContainer) {
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+  }
 
   async function sendMessage() {
     if (input.trim()) {
@@ -47,6 +56,10 @@
       }
     }, 1000);
   }
+
+  afterUpdate(() => {
+    scrollToBottom();
+  });
 
   import { callAPI } from "./apiacess.js";
 </script>
