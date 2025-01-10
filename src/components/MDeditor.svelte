@@ -23,36 +23,41 @@
 </script>
 
 <style>
-    :root {
-        --mdeditbg: #141417;
-        --textcol: #ededed;
-        --editorborder: #393f45;
-        --editorfocus: #676c74;
-    }
-    textarea {
-        background-color: var(--mdeditbg);
-        color: var(--textcol);
-        width: 30vw;
-        height: 85vh;
-        margin-top: 10vh;
-        font-family: monospace;
-        font-size: 14px;
-        padding: 10px;
-        border: 1px solid var(--editorborder);
-        border-radius: 10px;
-        margin-bottom: 20px;
-    }
+  @font-face {
+    font-family: firamono;
+    src: url(/public/FiraMono-Regular.ttf);
+  }
 
-    textarea:focus {
-      outline: none;
-      border-color: var(--editorfocus);
-    }
+  :root {
+      --mdeditbg: #141417;
+      --textcol: #ededed;
+      --editorborder: #393f45;
+      --editorfocus: #676c74;
+  }
+  textarea {
+      background-color: var(--mdeditbg);
+      color: var(--textcol);
+      width: 30vw;
+      height: 85vh;
+      margin-top: 10vh;
+      font-family: firamono;
+      font-size: 16px;
+      padding: 10px;
+      border: 1px solid var(--editorborder);
+      border-radius: 10px;
+      margin-bottom: 20px;
+  }
 
-    @font-face {
-        font-family: jetbrains;
-        src: url(/public/JetBrainsMono-Medium.ttf);
-    }
-    #outputbox{
+  textarea:focus {  
+    outline: none;
+    border-color: var(--editorfocus);
+  }
+
+  @font-face {
+      font-family: jetbrains;
+      src: url(/public/JetBrainsMono-Medium.ttf);
+  }
+  #outputbox{
     justify-content: center;
     margin-top: 10vh;
     margin-right:2%;
@@ -68,7 +73,7 @@
     padding: 5%;
     white-space: pre-wrap;
     margin-top: 20px;
-    font-family: jetbrains;
+    font-family: firamono;
     color: #FFFFFF;
     container-name: sidebar;
   }
@@ -78,7 +83,7 @@
     text-align: center;
     margin-top: 10px;
     font-size: 15px;
-    font-family: jetbrains;
+    font-family: firamono;
     color: #ffffff;
   }
 </style>

@@ -90,19 +90,26 @@
 <style>
   :root {
     --msgboxbg: #161613;
-    --msgboxborder: #36373f;
+    --msgboxborder: #484848;
     --txtboxbg: #28292c;
     --txtcol: #ededed;
     --sendbtn: #4c69de;
     --sendbtnhover: #54608e;
     --focusinput: #737c87;
   }
+
+  @font-face {
+    font-family: firamono;
+    src: url(/public/FiraMono-Regular.ttf);
+  }
+
   .chatbox-container {
     justify-content: center;
     align-items: center;
   }
 
   .chatbox {
+    font-family:firamono;
     display: flex;
     flex-direction: column;
     width: 28vw;
@@ -124,6 +131,7 @@
   }
 
   .message-input {
+    font-family: firamono;
     background-color: var(--txtboxbg);
     color: var(--txtcol);
     padding: 5px;
@@ -140,6 +148,7 @@
   }
 
   .send-button {
+    font-family: firamono;
     padding: 10px;
     border: none;
     background-color: var(--sendbtn);
