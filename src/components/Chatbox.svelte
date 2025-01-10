@@ -1,17 +1,25 @@
 <script>
-  let typer = "";
   let status = "";
-  let timer;
-  const timeoutVal = 1000;
-  let output = "";
-
   let messages = [];
   let input = "";
+  let typer = "";
 
-  function sendMessage() {
+  async function sendMessage() {
     if (input.trim()) {
       messages = [...messages, input];
+      let message = input;
       input = "";
+      typer = "";
+
+      try {
+        status = "Processing...";
+        const reply = await callAPI(message);
+        messages = [...messages, reply];
+        status = "";
+      } catch (err) {
+        console.error("API Error:", err);
+        status = "Error occurred.";
+      }
     }
   }
 
@@ -22,23 +30,25 @@
     }
   }
 
-  import { callAPI } from "./apiacess.js";
   async function handleKeyUp() {
     clearTimeout(timer);
     timer = setTimeout(async () => {
-      status = "Processing...";
-      output = "";
-      output = await callAPI(typer);
-      messages = [...messages, output];
-      status = "";
-    }, timeoutVal);
+      if (typer.trim()) {
+        status = "Processing...";
+        try {
+          const output = await callAPI(typer);
+          messages = [...messages, output];
+          typer = "";
+        } catch (err) {
+          console.error("API Error:", err);
+          status = "Error occurred.";
+        }
+        status = "";
+      }
+    }, 1000);
   }
 
-  function KeyDown() {
-    clearTimeout(timer);
-    status = "Typing...";
-    output = "";
-  }
+  import { callAPI } from "./apiacess.js";
 </script>
 
 <main>
@@ -54,10 +64,9 @@
       </div>
       <textarea
         class="message-input"
-        bind:value={typer}
+        bind:value={input}
         placeholder="Type a message..."
         on:keydown={handleKeyDown}
-        on:keydown={KeyDown}
         on:keyup={handleKeyUp}
       ></textarea>
       <button class="send-button" on:click={sendMessage}>Send</button>
