@@ -6,14 +6,15 @@
  // import Insights from "./components/InsightsAi.svelte";
 
   let mdText = "# Hello, Markdown!\n\nThis is a **bold** text and this is *italic*.\n\n- Item 1\n- Item 2\n";
+  let statuss;
+  let output;
 </script>
 
 <main>
   <Navbar />
   <div class="md">
     <div class="mdeditor">
-      <MDeditor bind:mdText />
-      <p>{mdText}</p>
+      <MDeditor bind:mdText bind:statuss bind:output />
     </div>
     <div class="mdrender">
       <MDRender {mdText} />

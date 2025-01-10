@@ -1,22 +1,22 @@
 <script>
-    export let mdText = "# Hello, Markdown!\n\nThis is a **bold** text and this is *italic*.\n\n- Item 1\n- Item 2\n";
-  let status = ''; // Status message ("Typing...", etc.)
+  export let mdText = "# Hello, Markdown!\n\nThis is a **bold** text and this is *italic*.\n\n- Item 1\n- Item 2\n";
+  export let statuss = ''; // Status message ("Typing...", etc.)
   let timer;
   const timeoutVal = 5000; // 5 seconds timeout
-  let output = ''; // Output response
+  export let output = ''; // Output response
 
   import {callAPI} from './apiacess.js';
   async function handleKeyUp() {
     clearTimeout(timer);
     timer = setTimeout(async() => {
-      status = '';
+      statuss = '';
       output=await callAPI(mdText,output);
     }, timeoutVal);
   }
 
   function handleKeyDown() {
     clearTimeout(timer);
-    status = 'Reading...';
+    statuss = 'Reading...';
     output = ''; // Clear output while typing
   }
 </script>
@@ -44,16 +44,17 @@
         font-family: jetbrains;
         src: url(/public/JetBrainsMono-Medium.ttf);
     }
-  #outputbox{
+    #outputbox{
     justify-content: center;
-    margin-top: 10%;
+    margin-top: 10vh;
     margin-right:2%;
     align-items: right;
     float: right;
-    width: 15%;
+    width: 20vw;
     height: 21vw;
     background-color:#202020 ;
     border-radius: 10px;
+    overflow: scroll;
   }
   #output {
     padding: 5%;
@@ -64,7 +65,7 @@
     container-name: sidebar;
   }
 
-  #status {
+  #statuss {
     padding: 2%;
     text-align: center;
     margin-top: 10px;
@@ -82,7 +83,7 @@
         
     ></textarea>
     <div id="outputbox">
-        <div id="status">{status}</div>
+        <div id="statuss">{statuss}</div>
         <div id="output">{output}</div>
       </div>
 </main>
