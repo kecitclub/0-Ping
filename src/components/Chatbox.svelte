@@ -5,7 +5,8 @@
   let messages = [];
   let input = "";
   let typer = "";
-
+  let prefix =
+    "Use professional tone, keep it within 25 words, do not use heavy words";
   function scrollToBottom() {
     const messagesContainer = document.querySelector(".messages");
     if (messagesContainer) {
@@ -22,7 +23,7 @@
 
       try {
         status = "Processing...";
-        const reply = await callAPI(message);
+        const reply = await callAPI(message, prefix);
         messages = [...messages, reply];
         status = "";
       } catch (err) {
@@ -45,7 +46,7 @@
       if (typer.trim()) {
         status = "Processing...";
         try {
-          const output = await callAPI(typer);
+          const output = await callAPI(typer, prefix);
           messages = [...messages, output];
           typer = "";
         } catch (err) {
@@ -109,7 +110,7 @@
   }
 
   .chatbox {
-    font-family:firamono;
+    font-family: firamono;
     display: flex;
     flex-direction: column;
     width: 28vw;
