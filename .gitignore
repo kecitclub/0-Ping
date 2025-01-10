@@ -1,3 +1,4 @@
 node_modules/
 public/build
-.svelte-kit
+.svelte-kit/
+dist/

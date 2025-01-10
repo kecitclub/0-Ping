@@ -9,6 +9,10 @@
         font-family: jetbrains;
         src: url(/public/JetBrainsMono-Medium.ttf);
     }
+    @font-face {
+        font-family: ibmplexsans;
+        src: url(/public/IBMPlexSans-Regular.ttf);
+    }
     :root {
         --renderer-bg :#131213;
         --bordercol: #2a2a2a;
@@ -19,9 +23,9 @@
     .mdoutput {
         width: 35vw;
         height: 80vh;
-        font-family: monospace;
+        font-family: ibmplexsans;
         color: var(--rendertxt);
-        font-size: 14px;
+        font-size: 16px;
         padding: 10px;
         background-color: var(--renderer-bg);
         border-radius: 10px;
