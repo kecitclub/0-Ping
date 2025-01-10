@@ -112,4 +112,5 @@
 </style>
 <main>
   <Navbar />
+  {()=>makeActive('draw')}
 </main>
