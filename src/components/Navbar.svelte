@@ -17,6 +17,7 @@
     <ul>
         <li><a id="md" on:click={() => makeActive('md')} href="/app.html" class=active>Markdown</a></li>
         <li><a id="draw" on:click={() => makeActive('draw')} href="/draw.html">Whiteboard</a></li>
+        <li><a id="pdfsum" on:click={() => makeActive('pdfsum')} href="/pdf.html">PDF Summarizer</a></li>
       <li class="dropdown">
         <a href="#abc" on:click|stopPropagation={toggleDropdown}>
           About Us
