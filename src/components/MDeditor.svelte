@@ -54,8 +54,8 @@
   }
 
   @font-face {
-      font-family: jetbrains;
-      src: url(/public/JetBrainsMono-Medium.ttf);
+      font-family: firamono;
+      src: url(/public/FiraMono-Regular.ttf);
   }
   #outputbox{
     justify-content: center;
@@ -65,7 +65,7 @@
     float: right;
     width: 20vw;
     height: 21vw;
-    background-color:#202020 ;
+    background-color: var(--mdeditbg) ;
     border-radius: 10px;
     overflow: scroll;
   }
@@ -73,8 +73,8 @@
     padding: 5%;
     white-space: pre-wrap;
     margin-top: 20px;
-    font-family: firamono;
-    color: #FFFFFF;
+    font-family: jetbrains;
+    color: var(--textcol);
     container-name: sidebar;
   }
 
@@ -83,8 +83,8 @@
     text-align: center;
     margin-top: 10px;
     font-size: 15px;
-    font-family: firamono;
-    color: #ffffff;
+    font-family: jetbrains;
+    color: var(--textcol);
   }
 </style>
 
