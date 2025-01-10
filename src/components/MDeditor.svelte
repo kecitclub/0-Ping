@@ -2,6 +2,7 @@
   export let mdText = "# Hello, Markdown!\n\nThis is a **bold** text and this is *italic*.\n\n- Item 1\n- Item 2\n";
   export let statuss = ''; // Status message ("Typing...", etc.)
   let timer;
+  let prefix="Do not use conversational tone, keep it within 25 words, do not use heavy words, just give additionals notes about the stuff I am writing";
   const timeoutVal = 5000; // 5 seconds timeout
   export let output = ''; // Output response
 
@@ -10,7 +11,7 @@
     clearTimeout(timer);
     timer = setTimeout(async() => {
       statuss = '';
-      output=await callAPI(mdText,output);
+      output=await callAPI(mdText,prefix,output);
     }, timeoutVal);
   }
 

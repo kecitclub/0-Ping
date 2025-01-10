@@ -1,4 +1,4 @@
-export async function callAPI(typer, output) {
+export async function callAPI(typer, prefix, output) {
   output = "";
   try {
     const response = await fetch("http://localhost:11434/api/generate", {
@@ -8,7 +8,7 @@ export async function callAPI(typer, output) {
       },
       body: JSON.stringify({
         model: "llama3.2",
-        prompt: `${typer}, do not use conversational tone, keep it short, do not use heavy words, give additional information or notes about the stuff I am writing`,
+        prompt: `${prefix} /n ${typer}`,
       }),
     });
 
