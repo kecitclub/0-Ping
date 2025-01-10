@@ -29,21 +29,21 @@
   }
 
   :root {
-      --mdeditbg: #141417;
-      --textcol: #ededed;
-      --editorborder: #393f45;
-      --editorfocus: #676c74;
+    --mdbg: #212023;
+    --mdtext: #ededed;
+    --mdborder: #353536;
+    --editorfocus: #595960;
   }
   textarea {
-      background-color: var(--mdeditbg);
-      color: var(--textcol);
+      background-color: var(--mdbg);
+      color: var(--mdtext);
       width: 30vw;
       height: 85vh;
       margin-top: 10vh;
       font-family: firamono;
       font-size: 16px;
       padding: 10px;
-      border: 1px solid var(--editorborder);
+      border: 1px solid var(--mdborder);
       border-radius: 10px;
       margin-bottom: 20px;
   }

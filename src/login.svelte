@@ -1,4 +1,14 @@
 <style>
+    :root {
+        --bg: #19181a;
+        --text: #feffff;
+        --bgseconday: #2e2d2f;
+        --bgtertiay: #444445;
+        --loginbutton: #6482e6;
+        --loginsecondary: #5f70aa;
+        --textbox: #c9c9d7;
+        --textfieldborder: #939399;
+    }
     *{
         box-sizing: border-box;
     }
@@ -7,8 +17,7 @@
         src: url('/public/JetBrainsMono-Medium.ttf');
     }
     main{
-        
-        background-color: #090909;
+        background-color: var(--bg);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -21,56 +30,62 @@
         align-items: center;
     }
     .name{
-        color: #ededed;
+        color: var(--text);
         font-size: 10vh;
-        margin-bottom: 100px;
+        margin-bottom: 10px;
         text-align: center;
         font-family:jetbrains;
-
     }
     .login-container input[type="text"],
     .login-container input[type="password"] {
+        background-color: var(--textbox);
         width: 100%;
-        padding: 10px;
-        margin: 10px 0;
-        border: 0.5px solid #ccc;
-        border-radius: 2px;
+        padding: 1vw;
+        margin-bottom: 2vh;
+        border: 0.5px solid var(--bgseconday);
+        border-radius: 10px;
         text-align: center;
         font-family: jetbrains;
+    }
+    .login-container input[type="text"]:focus,
+    .login-container input[type="password"]:focus {
+        outline: none;
+        border: 1px solid 
     }
     .login-container input::placeholder{
         text-align: center;
         font-family: jetbrains;
     }
     .logo {
-        width: 20vw;
-        margin-bottom: 20px;
+        width: 12vw;
+        margin-bottom: 3vh;
     }
     .login-container {
-        background-color: #000000;
-        padding: 20px;
-        border-radius: 6px;
+        background-color: var(--bgseconday);
+        padding: 4vh;
+        border-radius: 10px;
         width: 300px;
         max-width: 300px; 
     }
     .login-container button {
+        font-family: jetbrains;
         width: 100%;
         padding: 10px;
-        background-color: #727272;
-        color: white;
+        background-color: var(--loginbutton);
+        color: var(--text);
         border: none;
-        border-radius: 2.5px;
+        border-radius: 10px;
         cursor: pointer;
     }
     .login-container button:hover {
-        background-color: #545454;
+        background-color: var(--loginsecondary);
     }
 </style>
 
 <main>
     <div class="container">
     <div class="name">NEODESK</div>
-    <img src="../trans_bg.png" alt="Logo" class="logo">
+    <img src="/trans_bg.png" alt="Logo" class="logo">
     <div class="login-container">
     <form action="app.html" method="post">
         <input type="text" name="username" placeholder="Username" required>

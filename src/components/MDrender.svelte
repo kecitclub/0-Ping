@@ -14,31 +14,32 @@
         src: url(/public/IBMPlexSans-Regular.ttf);
     }
     :root {
-        --renderer-bg :#131213;
-        --bordercol: #2a2a2a;
-        --rendertxt: #cdcdcd;
-        --titlebg: #603333;
-        --renderborder: #45393b;
+        --mdrendbg: #222124;
+        --mdrendtext: #ededed;
+        --mdrendborder: #353536;
+        --titlebg: #7a82aa;
+        --titletext: #201f21;
+
     }
     .mdoutput {
         width: 35vw;
         height: 80vh;
         font-family: ibmplexsans;
-        color: var(--rendertxt);
+        color: var(--mdrendtext);
         font-size: 16px;
         padding: 10px;
-        background-color: var(--renderer-bg);
+        background-color: var(--mdrendbg);
         border-radius: 10px;
         overflow-y: auto;
     }
     .renderer {
-        border: 1px solid var(--renderborder);
+        border: 1px solid var(--mdrendborder);
         border-radius: 10px;
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-top: 10vh;
-        background-color: var(--renderer-bg) ;
+        background-color: var(--mdrendbg) ;
     }
     .titlebar {
         font-family: jetbrains;
@@ -48,7 +49,7 @@
         border-top-right-radius: 10px;
         text-align: center;
         font-weight: bold;
-        color: var(--rendertxt);
+        color: var(--titletext);
         width: 37vw;
         padding: 5px;
     }

@@ -15,13 +15,11 @@
   
   <nav>
     <ul>
-        <li><a id="md" on:click={() => makeActive('md')} href="/app.html" class=active>Markdown</a></li>
-        <li><a id="draw" on:click={() => makeActive('draw')} href="/draw.html">Whiteboard</a></li>
-        <li><a id="pdfsum" on:click={() => makeActive('pdfsum')} href="/pdf.html">PDF Summarizer</a></li>
+        <li><a id="md" on:click={() => makeActive('md')} href="/app.html" class=active><img alt="" src="/public/write.png" width=35></a></li>
+        <li><a id="draw" on:click={() => makeActive('draw')} href="/draw.html"><img alt="" src="/public/whiteboard.png" width=35></a></li>
       <li class="dropdown">
         <a href="#abc" on:click|stopPropagation={toggleDropdown}>
-          About Us
-          <span class="caret">{showDropdown ? '▲' : '▼'}</span>
+          <img alt="" src="/public/contacts.png" width=35>
         </a>
         <ul class="dropdown-menu {showDropdown ? 'show' : ''}">
           <li><a href="#contact">Contact No: 9000000000</a></li>
@@ -34,27 +32,34 @@
   
   <style>
     :root {
-        --navbg: #131316;
-        --fontcol: #ededed;
-        --navborder: #393f45;
-        --hover: #50597e;
-        --activetab: #5b6eba;
+      --bg: #211f23;
+      --text: #dedede;
+      --bgseconday: #2e2d2f;
+      --bgtertiary: #444445;
     }
 
     @font-face {
         font-family: jetbrains;
         src: url(/public/JetBrainsMono-Medium.ttf);
     }
+
+    img {
+      margin-right: 2vw;
+    }
+
+    img:active {
+      transform: scale(0.9);
+    }
+
     nav {
-      background-color: var(--navbg);
+      background-color: var(--bg);
       padding: 1vh;
       position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
       z-index: 1000;
-      border: 1px solid var(--navborder);
-      border-radius: 6px;
+      border-bottom: 1px solid var(--bgtertiary);
     }
   
     ul {
@@ -68,8 +73,8 @@
   
     li a {
       text-decoration: none;
-      color: var(--fontcol);
-      padding: 1vh;
+      color: var(--text);
+      padding: 0;
       border-radius: 4px;
       display: flex;
       align-items: center;
@@ -87,8 +92,8 @@
       position: absolute;
       top: 7vh;
       left: 0;
-      background-color: var(--navbg);
-      border: 1px solid var(--navborder);
+      background-color: var(--bg);
+      border: 1px solid var(--bgtertiary);
       border-radius: 6px;
       z-index: 1100;
       padding: 1vh;
@@ -107,10 +112,5 @@
   
     .dropdown-menu li a:hover {
       background-color: #545454;
-    }
-
-    .caret {
-      margin-left: 1vw;
-      font-size: 12px;
     }
 </style>

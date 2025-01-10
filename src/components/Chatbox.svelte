@@ -90,12 +90,13 @@
 
 <style>
   :root {
-    --msgboxbg: #161613;
-    --msgboxborder: #484848;
-    --txtboxbg: #28292c;
+    --msgboxbg: #201f21;
+    --msgboxborder: #3d3e41;
+    --txtboxbg: #1c1b1d;
     --txtcol: #ededed;
-    --sendbtn: #4c69de;
-    --sendbtnhover: #54608e;
+    --sendbtn: #6482e6;
+    --sendbtntext: #201f21;
+    --sendbtnhover: #5067b4;
     --focusinput: #737c87;
   }
 
@@ -125,7 +126,7 @@
     flex: 1;
     overflow-y: auto;
     margin-bottom: 10px;
-    padding: 5px;
+    padding: 1vh;
     background-color: var(--txtboxbg);
     border: 1px solid var(--msgboxborder);
     border-radius: 10px;
@@ -135,7 +136,7 @@
     font-family: firamono;
     background-color: var(--txtboxbg);
     color: var(--txtcol);
-    padding: 5px;
+    padding: 1vh;
     height: 10vh;
     border: 1px solid var(--msgboxborder);
     border-radius: 10px;
@@ -153,7 +154,7 @@
     padding: 10px;
     border: none;
     background-color: var(--sendbtn);
-    color: var(--txtcol);
+    color: var(--sendbtntext);
     border-radius: 10px;
     cursor: pointer;
   }
