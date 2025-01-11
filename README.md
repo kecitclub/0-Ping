@@ -7,6 +7,8 @@ It also includes a whiteboard to make freehand diagrams and doodles.
 
 Neodesk is built using the Svelte web framework and LLAMA-3.2:3B model.
 
+<img src='./public/Screenshot.png' width=600>
+
 ## Technologies used
 - HTML,CSS
 - [Svelte](https://svelte.dev/)
