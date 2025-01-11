@@ -21,7 +21,7 @@ To install pull the image and run as:
 
     
     docker image pull sinkobobux/neodesk:latest
-    docker run -d --rm --name=neodesk -p 5173:5173 neodesk:latest
+    docker run -d --rm --name=neodesk -p 5173:5173 sinkobobux/neodesk:latest
     
     
 ## LICENSE
