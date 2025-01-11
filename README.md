@@ -16,7 +16,7 @@ Neodesk is built using the Svelte web framework and LLAMA-3.2:3B model.
 - [LLAMA3.2](https://ollama.com/library/llama3.2)
 
 ## Installation and Usage
-Docker image for neodesk is available in the docker hub
+Docker image for neodesk is available in the docker hub.
 To install pull the image and run as:
 
     
