@@ -1,9 +1,9 @@
 <script>
   export let mdText = "# Hello, Markdown!\n\nThis is a **bold** text and this is *italic*.\n\n- Item 1\n- Item 2\n";
-  export let statuss = ''; // Status message ("Typing...", etc.)
+  export let statuss = '';
   let timer;
   let prefix="Do not use conversational tone, keep it within 25 words, do not use heavy words, just give additionals notes about the stuff I am writing";
-  const timeoutVal = 5000; // 5 seconds timeout
+  const timeoutVal = 4000; // 5 seconds timeout
   export let output = ''; // Output response
 
   import {callAPI} from './apiacess.js';
@@ -57,35 +57,6 @@
       font-family: firamono;
       src: url(/public/FiraMono-Regular.ttf);
   }
-  /*#outputbox{
-    justify-content: center;
-    margin-top: 1vh;
-    margin-right:2%;
-    align-items: right;
-    float: right;
-    width: 20vw;
-    height: 21vw;
-    background-color: var(--mdeditbg) ;
-    border-radius: 10px;
-    overflow: scroll;
-  }
-  #output {
-    padding: 5%;
-    white-space: pre-wrap;
-    margin-top: 20px;
-    font-family: jetbrains;
-    color: var(--textcol);
-    container-name: sidebar;
-  }
-
-  #statuss {
-    padding: 2%;
-    text-align: center;
-    margin-top: 10px;
-    font-size: 15px;
-    font-family: jetbrains;
-    color: var(--textcol);
-  }*/
 </style>
 
 <main>
@@ -95,8 +66,4 @@
     on:keydown="{handleKeyDown}"
         
     ></textarea>
-    <!--<div id="outputbox">
-        <div id="statuss">{statuss}</div>
-        <div id="output">{output}</div>
-    </div>-->
 </main>

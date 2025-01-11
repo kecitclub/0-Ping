@@ -110,8 +110,11 @@
 <button class="eraser-btn" onclick={toggleEraser}>
   {isErasing ? "Switch to Draw" : "Switch to Erase"}
 </button>
-<div class="buttons">
+<div class="pointer-controls">
   <button class="pointer_increase" onclick={increasePointer}> + </button>
+  <div class="counter">
+    <p><b>{count}</b></p>
+  </div>
   <button class="pointer_decrease" onclick={decreasePointer}> - </button>
 </div>
 <button class="clearCanvas-btn" onclick={clearCanvas}
@@ -120,9 +123,6 @@
 <main>
   <Navbar />
   {() => makeActive("draw")}
-  <div class="counter">
-    <p><b>{count}</b></p>
-  </div>
   <div class="colorBoard">
     <button
       class="redStrokeButton changeColorButton"
@@ -183,21 +183,23 @@
     src: url("/public/JetBrainsMono-Medium.ttf");
   }
   .changeColorButton {
-    height: 100%;
-    width: 2.2vh;
-    border-radius: 0.5vh;
-    border: none;
-  }
+  height: 2rem;
+  width: 2rem; 
+  border-radius: 50%; 
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, border 0.2s ease;
+}
 
-  .changeColorButton:hover {
-    border: 0.05vh solid #b6b6b6;
-    transform: scale(1.01);
-  }
+.changeColorButton:hover {
+  border: 0.1rem solid #b6b6b6;
+  transform: scale(1.1); 
+}
 
-  .changeColorButton:active {
-    background-color: #333;
-    transform: scale(0.9);
-  }
+.changeColorButton:active {
+  transform: scale(0.9); 
+  background-color: #333;
+}
 
   .clearCanvas-btn {
     position: fixed;
@@ -229,21 +231,22 @@
   }
 
   .colorBoard {
-    position: fixed;
-    bottom: 3vh;
-    right: 23.7vw;
-    padding: 1vw;
-    background-color: #171718;
-    color: white;
-    height: 1rem;
-    width: 11rem;
-    border: none;
-    border-radius: 0.8vw;
-    cursor: pointer;
-    transition:
-      background-color 0.3s,
-      transform 0.2s;
-  }
+  position: fixed;
+  bottom: 3vh;
+  right: 30vw;
+  padding: 1vw;
+  background-color: #171718;
+  color: white;
+  height: auto; 
+  width: 12rem; 
+  border: none;
+  border-radius: 0.8vw;
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 0.5rem; 
+  justify-content: center; 
+  align-items: center; 
+}
 
   .buttons {
     position: fixed;
@@ -280,72 +283,53 @@
     transform: scale(0.9);
   }
 
-  .pointer_increase {
-    z-index: 1001;
-    position: fixed;
-    bottom: 21px;
-    right: 180px;
-    padding: 5px 15px;
-    background-color: #171718;
-    color: white;
-    font-size: 15px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition:
-      background-color 0.3s,
-      transform 0.2s;
-  }
+  .pointer-controls {
+  position: fixed;
+  bottom: 3vh;
+  right: 15vw; 
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; 
+  background-color: #171718;
+  padding: 0.5rem 1rem;
+  border-radius: 0.8rem;
+  z-index: 1000;
+}
 
-  .pointer_decrease {
-    z-index: 1001;
-    position: fixed;
-    bottom: 21px;
-    right: 275px;
-    padding: 5px 15px;
-    background-color: #171718;
-    color: white;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition:
-      background-color 0.3s,
-      transform 0.2s;
-  }
+  .pointer_increase,
+.pointer_decrease {
+  padding: 0.5rem 1rem;
+  background-color: #171718;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
 
   .counter {
-    z-index: 1000;
-    font-family: jetbrains;
-    position: fixed;
-    bottom: 20px;
-    right: 13.1vw;
-    padding: 1px 64px;
-    background-color: #171718;
-    color: white;
-    font-size: 8.5px;
-    border: none;
-    border-radius: 8px;
-    height: 28px;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #171718;
+  color: white;
+  font-size: 1rem;
+  width: 3rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  font-family: jetbrains;
+  text-align: center;
+}
 
-  .pointer_increase:hover {
-    background-color: #545454;
-    transform: scale(1.05);
-  }
-
-  .pointer_increase:active {
-    background-color: #333;
-    transform: scale(0.9);
-  }
-
-  .pointer_decrease:hover {
-    background-color: #545454;
-    transform: scale(1.05);
-  }
-
+.pointer_increase:hover,
+.pointer_decrease:hover {
+  background-color: #545454;
+  transform: scale(1.05);
+}
+  .pointer_increase:active,
   .pointer_decrease:active {
-    background-color: #333;
-    transform: scale(0.9);
-  }
+  background-color: #333;
+  transform: scale(0.9);
+}
 </style>
